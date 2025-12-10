@@ -1,42 +1,68 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+*{
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.container{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.cuadrado{
+  width: 200px;
+  height: 200px;
+  background-color:yellow;
+  border-radius: 20px;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+  animation: efecto 2s ease-in-out infinite;
+  transition: all 0.5s linear;
+  z-index: 1;
+}
+
+.cuadrado:hover{
+  background-color: orange;
+  box-shadow: 3px 3px 15px 3px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s linear;
+}
+
+.cuadrado:active{
+  transform: rotate(45deg) scale(1.5);
+}
+
+@keyframes efecto {
+  0% { scale: 1; }
+  50% { scale: 1.15; }
+  100%{scale: 1;}
+}
+
+.circulo{
+  width: 200px;
+  height: 200px;
+  background-color: lime;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px 10px rgba(0, 255, 0, 1);
+  animation: efecto 2s ease-in-out infinite;
+  animation-delay: 1s;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.cuadradoNo{
+   width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 100px;
+  box-shadow: 0px 0px 10px 10px rgb(255, 0 , 0, 1);
+  animation: efecto 2s ease-in-out infinite;
+  animation-delay: 1s;
+  transition: all 0.5s ease;
+  z-index: 0;
+}
+
+.cuadradoNo:hover{
+  border-radius: 10px;
 }
