@@ -18,7 +18,7 @@
   background-color:yellow;
   border-radius: 20px;
   box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
-  animation: efecto 2s ease-in-out infinite;
+  animation: efecto 2s ease-in-out infinite, opacidad 3s ease-in-out infinite;
   transition: all 0.5s linear;
   z-index: 1;
 }
@@ -33,9 +33,15 @@
   transform: rotate(45deg) scale(1.5);
 }
 
-@keyframes efecto {
-  0% { scale: 1; }
-  50% { scale: 1.15; }
+@keyframes opacidad {
+  0% { opacity: 100%; }
+  50% { opacity: 50%; }
+  100%{opacity: 100%;}
+}
+
+@keyframes efecto{
+  0%{scale: 1;}
+  50%{scale: 1.3;}
   100%{scale: 1;}
 }
 
@@ -63,6 +69,6 @@
   z-index: 0;
 }
 
-.cuadradoNo:hover{
+.cuadradoNo:hover, .circulo:hover{
   border-radius: 10px;
 }
